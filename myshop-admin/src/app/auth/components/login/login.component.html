@@ -1,0 +1,43 @@
+<div class="container w-50 my-5">
+  <mat-card>
+    <h1 class="text-center mat-subheading-1" style="font-size:30px;color:#F93154;">Sign In</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+      <div class="input-group mb-3 form-group">
+        <span class="input-group-text" id="basic-addon1"
+          ><i class="fa fa-envelope" style="font-size: 24px;color:#F93154;"></i
+        ></span>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Enter email..."
+          formControlName="email"
+        />
+      </div>
+      <div class="input-group mb-3 form-group">
+        <span class="input-group-text" id="basic-addon1"
+          ><i class="fa fa-lock" style="font-size: 24px;color:#F93154;"></i
+        ></span>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password..."
+          formControlName="password"
+        />
+      </div>
+      <div class="input-group mb-3 form-group">
+        <span class="input-group-text" id="basic-addon1"
+          ><i class="fa fa-lock" style="font-size: 24px;color:#F93154;"></i
+        ></span>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Confirm Password..."
+          formControlName="confirmPassword"
+        />
+      </div>
+      <div class="text-center">
+        <button [disabled]="!loginForm.valid" mat-raised-button color="accent">Login</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
