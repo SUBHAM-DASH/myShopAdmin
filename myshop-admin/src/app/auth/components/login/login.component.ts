@@ -17,7 +17,18 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  //Submit the form
   onSubmitLogin(){
     console.log(this.loginForm.value);
+  }
+
+  //Submit the google
+  onClickGoogle(){
+    console.log("google click");
+  }
+
+  //Submit the facebook
+  onClickFacebook(){
+    console.log("facebook click");
   }
 }

@@ -20,7 +20,18 @@ export class SignupComponent implements OnInit {
     });
   }
 
+  //Submit the form
   onSubmitSignup() {
     console.log(this.signupForm.value);
+  }
+
+  //Submit the google
+  onClickGoogle(){
+    console.log("google click");
+  }
+
+  //Submit the facebook
+  onClickFacebook(){
+    console.log("facebook click");
   }
 }

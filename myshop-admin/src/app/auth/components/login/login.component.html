@@ -1,6 +1,6 @@
-<div class="container w-50 my-5">
+<div class="container my-5">
   <mat-card>
-    <h1 class="text-center mat-subheading-1" style="font-size:30px;color:#F93154;">Sign In</h1>
+    <h1 class="text-center mat-subheading-1" style="font-size:30px;color:#F93154;">Welcome</h1>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
       <div class="input-group mb-3 form-group">
         <span class="input-group-text" id="basic-addon1"
@@ -39,5 +39,10 @@
         <button [disabled]="!loginForm.valid" mat-raised-button color="accent">Login</button>
       </div>
     </form>
+    <a class="text-primary" routerLink="/auth/forgot-password">forgot password?</a>
+    <div class="text-center">
+      <img src="../../../../assets/images/google.png" (click)="onClickGoogle()" style="width: 60px;height:60px;cursor: pointer;margin-right: 5px;" alt="image not found">
+      <img src="../../../../assets/images/facebook.png" (click)="onClickFacebook()" style="width: 40px;height:40px;cursor: pointer;" alt="image not found">
+    </div>
   </mat-card>
 </div>
