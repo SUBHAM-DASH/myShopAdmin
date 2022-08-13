@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserlistComponent } from './components/userlist/userlist.component';
-
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 const routes: Routes = [
-  { path: 'userlist', component: UserlistComponent },
-  { path: '', redirectTo: 'userlist', pathMatch: 'full' },
+  { path: 'user-detail', component: UserDetailComponent },
+  { path: '', redirectTo: 'user-detail', pathMatch: 'full' },
 ];
 
 @NgModule({

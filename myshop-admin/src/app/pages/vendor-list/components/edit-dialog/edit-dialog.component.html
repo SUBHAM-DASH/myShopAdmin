@@ -1,0 +1,143 @@
+<h1 mat-dialog-title class="text-center text-secondary my-2">Edit Please</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formGroup">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input
+            type="text"
+            matInput
+            formControlName="name"
+            placeholder="Name"
+            [(ngModel)]="data.name"
+          />
+          <mat-error
+            *ngIf="
+              formGroup.hasError('name') && !formGroup.hasError('required')
+            "
+          >
+            Please enter a valid name
+          </mat-error>
+          <mat-error
+            *ngIf="
+              formGroup.hasError('required') || formGroup.get('name')?.touched
+            "
+          >
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            formControlName="email"
+            placeholder="Email"
+            [(ngModel)]="data.email"
+          />
+          <mat-error
+            *ngIf="
+              formGroup.hasError('email') && !formGroup.hasError('required')
+            "
+          >
+            Please enter a valid email address
+          </mat-error>
+          <mat-error
+            *ngIf="
+              formGroup.hasError('required') || formGroup.get('email')?.touched
+            "
+          >
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Barcode</mat-label>
+          <input
+            type="text"
+            matInput
+            formControlName="barcode"
+            placeholder="Barcode"
+            [(ngModel)]="data.barcode"
+          />
+          <mat-error
+            *ngIf="
+              formGroup.hasError('barcode') && !formGroup.hasError('required')
+            "
+          >
+            Please enter a valid Valid Barcode Number
+          </mat-error>
+          <mat-error
+            *ngIf="
+              formGroup.hasError('required') ||
+              formGroup.get('barcode')?.touched
+            "
+          >
+            Barcode is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Phone</mat-label>
+          <input
+            type="text"
+            matInput
+            formControlName="mobile"
+            placeholder="Phone Number"
+            [(ngModel)]="data.mobile"
+          />
+          <mat-error
+            *ngIf="
+              formGroup.hasError('mobile') && !formGroup.hasError('required')
+            "
+          >
+            Please enter a valid phone number
+          </mat-error>
+          <mat-error
+            *ngIf="
+              formGroup.hasError('required') || formGroup.get('mobile')?.touched
+            "
+          >
+            Phone is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="text-center">
+        <section class="example-section">
+          <label class="example-margin" class="mx-2">Status:</label>
+          <mat-radio-group [(ngModel)]="data.status" formControlName="status">
+            <mat-radio-button class="example-margin mx-1" [value]="true"
+              >Enable
+            </mat-radio-button>
+            <mat-radio-button class="example-margin mx-1" [value]="false"
+              >Disable
+            </mat-radio-button>
+          </mat-radio-group>
+        </section>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="d-flex justify-content-center">
+  <button mat-raised-button color="warn" mat-dialog-close (click)="onCancel()">
+    Cancel
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    mat-dialog-close
+    cdkFocusInitial
+    [mat-dialog-close]="this.formGroup.value"
+  >
+    Submit
+  </button>
+</div>
