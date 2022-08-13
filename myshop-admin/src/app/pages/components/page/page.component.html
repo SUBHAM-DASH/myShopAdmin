@@ -1,1 +1,27 @@
-<p>page works!</p>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened class="first-container">
+    <div class="text-center" routerLink="/pages/dash-board">
+      <img src="../../../../assets/images/dashboard.png" alt="image not found">
+      <p><strong>Dash board</strong></p>
+    </div>
+    <div class="text-center" routerLink="/pages/user-list">
+      <img src="../../../../assets/images/myprofile.png" alt="image not found">
+      <p><strong>User List</strong></p>
+    </div>
+    <div class="text-center" routerLink="/pages/vendor-list">
+      <img src="../../../../assets/images/myprofile.png" alt="image not found">
+      <p><strong>Vendor List</strong></p>
+    </div>
+    <div class="text-center" routerLink="/pages/push-notification">
+      <img src="../../../../assets/images/push.png" alt="image not found">
+      <p><strong>Push notification</strong></p>
+    </div>
+    <div class="text-center" routerLink="/pages/stocks">
+      <img src="../../../../assets/images/stock.png" alt="image not found">
+      <p><strong>Stocks</strong></p>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content class="container">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
