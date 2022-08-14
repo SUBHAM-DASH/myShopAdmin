@@ -5,14 +5,15 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { PageComponent } from './components/page/page.component';
 import { MaterialUlModule } from '../material-ul/material-ul.module';
 
+
 @NgModule({
   declarations: [
-    PageComponent
+    PageComponent,
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
-    MaterialUlModule
+    MaterialUlModule,
   ]
 })
 export class PagesModule { }

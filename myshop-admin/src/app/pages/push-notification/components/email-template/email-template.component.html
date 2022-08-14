@@ -1,0 +1,88 @@
+<div class="container my-4">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="inputGroup">
+      <label for="basic-url" class="form-label text-primary"
+        ><strong>TYPE</strong>*</label
+      >
+      <select class="form-select" formControlName='type' aria-label="Default select example">
+        <option selected disabled="true">Select Type</option>
+        <option *ngFor="let list of emailType" [value]="list.id">
+          {{ list.type }}
+        </option>
+      </select>
+    </div>
+
+    <label for="basic-url" class="form-label text-primary mt-3"
+      ><strong>URL</strong>*</label
+    >
+    <div class="input-group mb-3 inputGroup">
+      <span class="input-group-text" id="basic-addon3">https://</span>
+      <input
+        type="text"
+        class="form-control"
+        id="basic-url"
+        aria-describedby="basic-addon3"
+        formControlName="url"
+      />
+    </div>
+    <label for="basic-url" class="form-label text-primary mt-3"
+      ><strong>SUBJECT</strong>*</label
+    >
+    <div class="input-group mb-3 inputGroup">
+      <span class="input-group-text" id="inputGroup-sizing-default"
+        >Subject</span
+      >
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default"
+        formControlName="subject"
+      />
+    </div>
+
+    <label for="basic-url" class="form-label text-primary mt-3"
+      ><strong>IMAGE</strong>*</label
+    >
+    <div class="input-group mb-3 inputGroup">
+      <input
+        type="file"
+        class="form-control"
+        id="inputGroupFile02"
+        (change)="fileChangeEvent($event)"
+        formControlName="image"
+      />
+      <label class="input-group-text text-primary" for="inputGroupFile02"
+        >Upload</label
+      >
+    </div>
+
+    <div class="inputGroup croper row" [hidden]="!imageChangedEvent">
+      <div class="col-md-6">
+        <app-image-croper
+          class="croper"
+          [imageChangedEvent]="imageChangedEvent"
+          (imageEvent)="imageCropped($event)"
+        ></app-image-croper>
+      </div>
+      <div class="col-md-6">
+        <img [src]="croppedImage" />
+      </div>
+    </div>
+
+    <div class="inputGroup mt-5">
+      <label for="basic-url" class="form-label text-primary mt-3"
+        ><strong>CONTENT</strong>*</label
+      >
+      <ckeditor
+        [editor]="Editor"
+        formControlName="textEditorContent"
+        (change)="onChange($event)"
+      ></ckeditor>
+    </div>
+    <div class="text-center inputGroup">
+      <button class="btn btn-danger m-4" (click)="onReset()">Reset</button>
+      <button type="submit" class="btn btn-primary m-4">Submit</button>
+    </div>
+  </form>
+</div>
