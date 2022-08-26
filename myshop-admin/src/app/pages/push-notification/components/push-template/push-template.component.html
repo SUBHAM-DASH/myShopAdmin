@@ -4,7 +4,11 @@
       ><strong>TYPE</strong>*</label
     >
     <div class="inputGroup">
-      <select class="form-select" formControlName='type' aria-label="Default select example">
+      <select
+        class="form-select"
+        formControlName="type"
+        aria-label="Default select example"
+      >
         <option selected disabled="true">Select Type</option>
         <option *ngFor="let list of pushType" [value]="list.id">
           {{ list.type }}
@@ -12,7 +16,9 @@
       </select>
     </div>
 
-    <label for="basic-url" class="form-label text-primary mt-3"><strong>SUBJECT</strong>*</label>
+    <label for="basic-url" class="form-label text-primary mt-3"
+      ><strong>SUBJECT</strong>*</label
+    >
     <div class="input-group mb-3 inputGroup">
       <span class="input-group-text" id="inputGroup-sizing-default"
         >Subject</span
@@ -26,7 +32,9 @@
       />
     </div>
 
-    <label for="basic-url" class="form-label text-primary mt-3"><strong>IMAGE</strong>*</label>
+    <label for="basic-url" class="form-label text-primary mt-3"
+      ><strong>IMAGE</strong>*</label
+    >
     <div class="input-group mb-3 inputGroup">
       <input
         type="file"
@@ -36,7 +44,7 @@
         formControlName="image"
       />
     </div>
-    
+
     <div class="inputGroup croper row" [hidden]="!imageChangedEvent">
       <div class="col-md-6">
         <app-image-croper
@@ -54,7 +62,11 @@
       <label for="basic-url" class="form-label text-primary mt-3"
         ><strong>CONTENT</strong>*</label
       >
-      <ckeditor [editor]="Editor" formControlName="textEditorContent" (change)="onChange($event)"></ckeditor>
+      <ckeditor
+        [editor]="Editor"
+        formControlName="textEditorContent"
+        (change)="onChange($event)"
+      ></ckeditor>
     </div>
     <div class="text-center inputGroup">
       <button class="btn btn-danger m-4" (click)="onReset()">Reset</button>

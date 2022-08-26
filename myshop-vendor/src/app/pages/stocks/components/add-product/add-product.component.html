@@ -1,0 +1,74 @@
+<div class="my-5 container row">
+  <div class="col-md-8">
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Search Barcode</mat-label>
+        <input matInput type="number" placeholder="Barcode Search ..." #input />
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="col-md-4 my-3" *ngIf="hideSpinner">
+    <i class="fas fa-spinner fa-spin fa-2x"></i>
+  </div>
+</div>
+<div class="card p-5">
+  <form [formGroup]="formGroup" (ngSubmit)="onClickProductData()">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Product Name</mat-label>
+          <input
+            matInput
+            placeholder="Product Name"
+            formControlName="productName"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" style="width: 100%">
+          <mat-label>Select Category</mat-label>
+          <mat-select
+            [(ngModel)]="selectedValue"
+            formControlName="productCategory"
+          >
+            <mat-option *ngFor="let item of category" [value]="item.value">
+              {{ item.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Product Price</mat-label>
+          <input matInput placeholder="Product Price" formControlName="price" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Barcode</mat-label>
+          <input matInput placeholder="Barcode" formControlName="barcode" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <app-image-croper
+          class="cooper"
+          [imageChangedEvent]="ImageChangedEvent"
+          (imageEvent)="imageCroper($event)"
+        ></app-image-croper>
+      </div>
+      <div class="col-md-6" *ngIf="croppedImage">
+        <img [src]="croppedImage" height="190" width="455"/>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary my-5">
+          <input type="file" (change)="fileChangeEvent($event)" />
+        </button>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary mx-1">Submit</button>
+        <button class="btn btn-danger mx-1">Reset</button>
+      </div>
+    </div>
+  </form>
+</div>

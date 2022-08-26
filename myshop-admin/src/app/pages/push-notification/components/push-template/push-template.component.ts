@@ -68,7 +68,8 @@ export class PushTemplateComponent implements OnInit {
   }
 
   //for ck-editor
-  onChange({ editor }: ChangeEvent) {
+  onChange({editor}:any) {
     this.editorData = editor.getData();
+    console.log(this.editorData);
   }
 }

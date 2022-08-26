@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid bg-primary">
+    <a class="navbar-brand text-light">My Shop</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <img src="../assets/images/myprofile.png" alt="image not found" />
+      </ul>
+      <form class="d-flex">
+        <i
+          [hidden]="true"
+          class="fas fa-user-circle mx-5 text-light"
+          [matTooltip]="'Log Out'"
+          matTooltipClass="example-tooltip-red"
+          aria-label="Button that shows a red tooltip"
+          style="font-size: 27px"
+        ></i>
+      </form>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

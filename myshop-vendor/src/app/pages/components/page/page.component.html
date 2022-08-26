@@ -1,0 +1,27 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" class="side-nav" opened>
+    <div class="text-center" routerLink="/pages">
+      <img src="../../../../assets/images/dashboard.png" alt="image not found">
+      <p><strong>Dash board</strong></p>
+    </div>
+    <div class="text-center" routerLink="/pages/my-profile">
+      <img src="../../../../assets/images/my-profile.png" alt="image not found">
+      <p><strong>My Shop Profile</strong></p>
+    </div>
+    <div class="text-center" routerLink="/pages/stocks">
+      <img src="../../../../assets/images/stock.png" alt="image not found">
+      <p><strong>Stocks</strong></p>
+    </div>
+    <div class="text-center" routerLink="/pages/product-list">
+      <img src="../../../../assets/images/productlist.png" alt="image not found">
+      <p><strong>Product List</strong></p>
+    </div>
+    <div class="text-center" routerLink="/pages/reports">
+      <img src="../../../../assets/images/reports.png" alt="image not found">
+      <p><strong>Reports</strong></p>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
