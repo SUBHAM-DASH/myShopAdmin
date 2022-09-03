@@ -1,7 +1,6 @@
 import AdminModel from '../../models/admin/Admin.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-
 import transporter from '../../configs/emailConfig.js';
 
 class AdminController {
