@@ -8,7 +8,8 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { ShowProductComponent } from './components/show-product/show-product.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+ 
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MaterialUiModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    Ng2SmartTableModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-show-product',
-  templateUrl: './show-product.component.html',
-  styleUrls: ['./show-product.component.scss'],
+  selector: 'app-sale-product-details',
+  templateUrl: './sale-product-details.component.html',
+  styleUrls: ['./sale-product-details.component.scss']
 })
-export class ShowProductComponent implements OnInit {
+export class SaleProductDetailsComponent implements OnInit {
+
   settings = {
     mode: 'internal',
     delete: {
@@ -22,13 +23,13 @@ export class ShowProductComponent implements OnInit {
         title: 'ID',
       },
       name: {
-        title: 'Full Name',
+        title: 'Name',
       },
-      username: {
-        title: 'User Name',
-      },  
-      email: {
-        title: 'Email',   
+      price: {
+        title: 'Price',
+      },
+      discount: {
+        title: 'Discount',
       },
     },
     actions:{
@@ -39,27 +40,28 @@ export class ShowProductComponent implements OnInit {
   DataSource = [
     {
       id: 1,
-      name: 'Leanne Graham',
-      username: 'Bret',
-      email: 'Sincere@april.biz',
+      name: 'bike',
+      price:234,
+      discount: "23%"
     },
     {
       id: 2,
-      name: 'Ervin Howell',
-      username: 'Antonette',
-      email: 'Shanna@melissa.tv',
+      name: 'car',
+      price:2324,
+      discount: "20%"
     },
     {
-      id: 11,
-      name: 'Nicholas DuBuque',
-      username: 'Nicholas.Stanton',
-      email: 'Rey.Padberg@rosamond.biz',
+      id: 3,
+      name: 'auto',
+      price:534,
+      discount: "24%"
     },
   ];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   onRoleDelete(event: any) {
     console.log('Delete Event In Console');
@@ -85,4 +87,5 @@ export class ShowProductComponent implements OnInit {
       event.confirm.reject();
     }
   }
+
 }

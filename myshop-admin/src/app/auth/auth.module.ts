@@ -8,6 +8,8 @@ import { MaterialUlModule } from '../material-ul/material-ul.module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     AuthRoutingModule,
     MaterialUlModule,
     ReactiveFormsModule,
-    FormsModule
-  ]
+    FormsModule,
+    HttpClientModule
+  ],
 })
 export class AuthModule { }

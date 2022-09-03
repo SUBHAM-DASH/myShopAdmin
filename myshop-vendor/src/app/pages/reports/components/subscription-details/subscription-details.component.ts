@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-show-product',
-  templateUrl: './show-product.component.html',
-  styleUrls: ['./show-product.component.scss'],
+  selector: 'app-subscription-details',
+  templateUrl: './subscription-details.component.html',
+  styleUrls: ['./subscription-details.component.scss']
 })
-export class ShowProductComponent implements OnInit {
+export class SubscriptionDetailsComponent implements OnInit {
+
+
   settings = {
     mode: 'internal',
     delete: {
@@ -21,14 +23,14 @@ export class ShowProductComponent implements OnInit {
       id: {
         title: 'ID',
       },
-      name: {
-        title: 'Full Name',
+      subscriberName: {
+        title: 'Subscriber Name',
       },
-      username: {
-        title: 'User Name',
-      },  
-      email: {
-        title: 'Email',   
+      price: {
+        title: 'Price',
+      },
+      date: {
+        title: 'Date',
       },
     },
     actions:{
@@ -39,27 +41,28 @@ export class ShowProductComponent implements OnInit {
   DataSource = [
     {
       id: 1,
-      name: 'Leanne Graham',
-      username: 'Bret',
-      email: 'Sincere@april.biz',
+      subscriberName: 'Subham',
+      price:2,
+      date: "3/5/2022"
     },
     {
       id: 2,
-      name: 'Ervin Howell',
-      username: 'Antonette',
-      email: 'Shanna@melissa.tv',
+      subscriberName: 'Babu',
+      price:3,
+      category: "4/6/2022"
     },
     {
-      id: 11,
-      name: 'Nicholas DuBuque',
-      username: 'Nicholas.Stanton',
-      email: 'Rey.Padberg@rosamond.biz',
+      id: 3,
+      subscriberName: 'Bikash',
+      price:4,
+      date: "09/02/2022"
     },
   ];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   onRoleDelete(event: any) {
     console.log('Delete Event In Console');
@@ -85,4 +88,5 @@ export class ShowProductComponent implements OnInit {
       event.confirm.reject();
     }
   }
+
 }

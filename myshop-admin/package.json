@@ -26,6 +26,7 @@
     "@emotion/styled": "^11.10.0",
     "@mui/material": "^5.9.3",
     "@riapacheco/yutes": "^4.0.8",
+    "angularx-social-login": "^4.1.0",
     "bootstrap": "^5.2.0",
     "font-awesome": "^4.7.0",
     "ng2-charts": "^4.0.0",

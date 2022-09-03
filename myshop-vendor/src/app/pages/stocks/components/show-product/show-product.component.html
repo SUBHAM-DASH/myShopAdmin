@@ -1,1 +1,2 @@
-<p>show-product works!</p>
+<ng2-smart-table [settings]="settings" [source]="DataSource" (editConfirm)="onEditConfirm($event)"
+  (createConfirm)="onCreate($event)" (deleteConfirm)="onRoleDelete($event)"></ng2-smart-table>
